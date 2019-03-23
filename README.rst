@@ -16,12 +16,18 @@ Installation
     export AWS_SECRET_ACCESS_KEY=XXX
     export AWS_ACCESS_KEY_ID=XXX
 
+    # create default EMR roles
     aws emr create-default-roles
+    # create S3 bucket for jupyter notebooks
     aws --region=XXX s3 mb s3://XXX
+    # create ssh key-pair
     aws --region=XXX ec2 create-key-pair --key-name easy_spark_emr
+    # sync bootstrap files to S3 bucket
     aws s3 sync ./to_sync s3://XXX/easy_spark_emr
 
     # edit run_cluster for AWS_SUBNET_ID and AWS_BUCKET_NAME
+    # AWS_SUBNET_ID can be found at
+    # https://console.aws.amazon.com/vpc/home#subnets:sort=SubnetId
     ./run_cluster.sh
 
 open `aws emr console <https://console.aws.amazon.com/elasticmapreduce/home>`_
