@@ -37,7 +37,7 @@ add `All traffic` rule for Your `IP`
 
 go back your cluster
 
-open http://`Master public DNS`:8888/
+open `http://Master public DNS:8888/`
 
 see jupyter up and running ;)
 
