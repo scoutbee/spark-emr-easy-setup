@@ -31,7 +31,7 @@ got to Your region
 
 find Your cluster by id
 
-open ElasticMapReduce-master
+click on ElasticMapReduce-master security group
 
 add `All traffic` rule for Your `IP`
 
