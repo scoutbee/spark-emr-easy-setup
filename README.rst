@@ -26,8 +26,7 @@ Installation
 
 open `aws emr console <https://console.aws.amazon.com/elasticmapreduce/home>`_
 
-got to Your region
-
+go to Your region
 
 find Your cluster by id
 
@@ -35,7 +34,7 @@ click on ElasticMapReduce-master security group
 
 add `All traffic` rule for Your `IP`
 
-go back your cluster
+go back to the cluster
 
 open `http://Master public DNS:8888/`
 
