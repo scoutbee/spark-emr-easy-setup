@@ -51,6 +51,8 @@ if [ ! "$YUM_PACKAGES" = "" ]; then
   sudo yum install -y $YUM_PACKAGES
 fi
 
+sudo ldconfig
+
 # Install conda
 wget https://repo.continuum.io/miniconda/Miniconda3-"${CONDA_VERSION}"-Linux-x86_64.sh -O /home/hadoop/miniconda.sh\
     && /bin/bash ~/miniconda.sh -b -p /home/hadoop/conda
@@ -63,7 +65,7 @@ conda install conda="${CONDA_VERSION}"
 conda config -f --add channels conda-forge
 conda config -f --add channels defaults
 
-conda install "pyspark==2.4.0" boto3 botocore py4j fastparquet python-snappy pyarrow numpy pandas cython
+conda install "pyspark==2.4.0" boto3 botocore py4j fastparquet python-snappy "pyarrow<0.15.0" numpy pandas cython
 
 pip install -U pip setuptools wheel
 
@@ -93,12 +95,10 @@ mkdir -p "/mnt/s3-bucket"
 
 # Install Jupyter Note book on master and libraries
 conda install jupyter
+# pin notebook
+conda install notebook==5.7.8
 # do not use asyncio loop
 pip install "tornado<5"
-
-# bash kernel
-pip install bash_kernel
-python -m bash_kernel.install
 
 # jupyter configs
 mkdir -p ~/.jupyter

@@ -22,8 +22,6 @@ Installation
     aws --region=XXX s3 mb s3://XXX
     # create ssh key-pair
     aws --region=XXX ec2 create-key-pair --key-name easy_spark_emr
-    # sync bootstrap files to S3 bucket
-    aws s3 sync ./to_sync s3://XXX/easy_spark_emr
 
     # edit run_cluster for AWS_SUBNET_ID and AWS_BUCKET_NAME
     # AWS_SUBNET_ID can be found at

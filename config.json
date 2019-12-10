@@ -9,7 +9,7 @@
 
       "spark.yarn.executor.memoryOverhead": "10G",
       "spark.executor.memory": "40G",
-      "spark.executor.instances": "19",
+      "spark.executor.instances": "5",
       "spark.executor.cores": "5"
     }
   }
