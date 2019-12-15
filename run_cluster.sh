@@ -24,11 +24,11 @@ AWS_KEY_NAME="easy_spark_emr"
 aws s3 sync ./to_sync s3://$AWS_BUCKET_NAME/easy_spark_emr
 
 BOOTSTRAP_ARGS="[--password,$PASSWORD,--notebook-dir,--aws-bucket-name,"$AWS_BUCKET_NAME",--aws-region,"$AWS_REGION""
-if [ -n "$YUM_PACKAGES" ]; then
+if [ -n "$PYTHON_PACKAGES" ]; then
   BOOTSTRAP_ARGS+=",--python-packages,$PYTHON_PACKAGES"
 fi
 
-if [ -n "$PYTHON_PACKAGES" ]; then
+if [ -n "$YUM_PACKAGES" ]; then
   BOOTSTRAP_ARGS+=",--yum-packages,$YUM_PACKAGES"
 fi
 BOOTSTRAP_ARGS+=]
